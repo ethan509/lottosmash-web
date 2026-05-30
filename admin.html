@@ -38,7 +38,9 @@ input:focus { outline: none; border-color: #1d4ed8; box-shadow: 0 0 0 2px rgba(2
 </div>
 
 <script>
-const API_BASE = 'https://www.lottosmash.mauvemove.com';
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:8080'
+  : 'https://www.lottosmash.mauvemove.com';
 
 async function login() {
   const email    = document.getElementById('email').value.trim();
